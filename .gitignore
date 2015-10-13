@@ -1,0 +1,5 @@
+### intellij
+.idea/
+
+### dependency
+bower_components/
