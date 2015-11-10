@@ -57,7 +57,7 @@
         }];
       }
 
-      if(config.templateUrl) {
+      if(config.templateUrl && !config.$cached) {
         config.templateUrl = normalizeFileUrl(config.templateUrl, urlArg, filePath);
       }
 
@@ -138,11 +138,11 @@
 
       angular.forEach(views, function(config, name) {
         var resolver = $lazyLoadHelperProvider.makeBundle(config);
-
-        angular.forEach(options.resolve, function(value, key) {
-          resolver.resolve[key] = value;
-        });
-
+        if(resolver.resolve) {
+          angular.forEach(options.resolve, function(value, key) {
+            resolver.resolve[key] = value;
+          });
+        }
         result[name] = resolver;
       });
 
