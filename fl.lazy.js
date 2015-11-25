@@ -4,6 +4,7 @@
     filePath: "/",
     urlArg: new Date().getTime(),
     modules: {},
+    resolveByInjectConfig: null,
     resolve: null
   };
   angular.module('fl.lazy', ['oc.lazyLoad', 'ui.router']).config(config);
@@ -142,6 +143,9 @@
           angular.forEach(options.resolve, function(value, key) {
             resolver.resolve[key] = value;
           });
+          angular.forEach(options.resolveByInjectConfig, function(value, key) {
+            resolver.resolve[key] = angular.isFunction(value) ? value(config) : value;
+          })
         }
         result[name] = resolver;
       });
