@@ -1,7 +1,7 @@
 {
   "name": "fl.lazy",
   "main": "fl.lazy.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "authors": [
     "niceilm@naver.com"
   ],
@@ -24,14 +24,14 @@
     "spec"
   ],
   "dependencies": {
-    "angular": "^1.4.7",
-    "oclazyload": "^1.0.0",
-    "angular-ui-router": "^0.2.15"
+    "angular": "~1.4.0",
+    "oclazyload": "~1.0.0",
+    "angular-ui-router": "~0.2.0"
   },
   "devDependencies": {
-    "angular-mocks": "^1.4.7"
+    "angular-mocks": "~1.4.0"
   },
   "resolutions": {
-    "angular": "^1.4.7"
+    "angular": "~1.4.0"
   }
 }
